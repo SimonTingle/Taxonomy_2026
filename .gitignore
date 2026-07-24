@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# Generated outputs
+out/
+
+# Real / large data exports — never commit these (keep the small sample only)
+*.csv
+!data/sample_export.csv
+Book1.csv
+
+# Node / React
+web/node_modules/
+web/dist/
+web/.vite/
+
+# OS
+.DS_Store

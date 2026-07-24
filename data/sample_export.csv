@@ -1,0 +1,26 @@
+FileLeafRef,FileRef,Content Type,Modified,Modified By
+Invoice_1023.pdf,https://contoso.sharepoint.com/sites/Finance/AP/Invoices/Invoice_1023.pdf,Document,2024-03-01,J. Smith
+INV-2087.pdf,/sites/Finance/Accounts Payable/Invoices/INV-2087.pdf,Document,2024-02-11,J. Smith
+Board_Minutes_Q1.docx,/sites/Operations/Board/Minutes/Board_Minutes_Q1.docx,Document,2024-04-02,A. Lee
+Meeting Notes 2024-05.docx,/sites/Operations/Projects/Meetings/Meeting Notes 2024-05.docx,Document,2024-05-05,A. Lee
+Master Services Agreement.pdf,/sites/Legal/Contracts/Master Services Agreement.pdf,Document,2023-11-20,R. Patel
+NDA_Acme.docx,/sites/Legal/Agreements/NDA_Acme.docx,Document,2023-12-01,R. Patel
+HR_Leave_Policy.pdf,/sites/HR/Policies/HR_Leave_Policy.pdf,Document,2024-01-15,M. Chan
+Employee Handbook.docx,/sites/HR/Policies/Employee Handbook.docx,Document,2024-01-10,M. Chan
+Annual_Report_2023.pdf,/sites/Finance/Reporting/Annual_Report_2023.pdf,Document,2024-02-28,J. Smith
+Sales_KPI_Dashboard.xlsx,/sites/Sales/Reports/Sales_KPI_Dashboard.xlsx,Spreadsheet,2024-06-01,T. Rossi
+Q3_Budget_Forecast.xlsx,/sites/Finance/Budgets/Q3_Budget_Forecast.xlsx,Spreadsheet,2024-06-10,J. Smith
+Pitch_Deck_ClientX.pptx,/sites/Sales/Presentations/Pitch_Deck_ClientX.pptx,Presentation,2024-05-22,T. Rossi
+Company Overview Slides.pptx,/sites/Marketing/Decks/Company Overview Slides.pptx,Presentation,2024-04-18,S. Kim
+CV_Jane_Doe.pdf,/sites/HR/Recruitment/Candidates/CV_Jane_Doe.pdf,Document,2024-03-30,M. Chan
+Resume - John Ade.docx,/sites/HR/Recruitment/Candidates/Resume - John Ade.docx,Document,2024-03-29,M. Chan
+Proposal_ProjectPhoenix.docx,/sites/Sales/Proposals/Proposal_ProjectPhoenix.docx,Document,2024-05-12,T. Rossi
+RFP_Response_GovDept.pdf,/sites/Sales/Bids/RFP_Response_GovDept.pdf,Document,2024-04-27,T. Rossi
+Onboarding_Checklist.docx,/sites/HR/Forms/Onboarding_Checklist.docx,Document,2024-02-05,M. Chan
+Expense_Claim_Template.xlsx,/sites/Finance/Forms/Expense_Claim_Template.xlsx,Spreadsheet,2024-01-22,J. Smith
+Asset_Register.xlsx,/sites/IT/Systems/Asset_Register.xlsx,Spreadsheet,2024-03-14,D. Novak
+random_photo.jpg,/sites/Marketing/Brand/random_photo.jpg,Image,2024-06-20,S. Kim
+notes.txt,/sites/Operations/Misc/notes.txt,Document,2024-06-21,A. Lee
+scan001.pdf,/sites/Operations/Misc/scan001.pdf,Document,2024-06-22,A. Lee
+Payroll_June.xlsx,/sites/HR/Payroll/Payroll_June.xlsx,Spreadsheet,2024-06-30,M. Chan
+Contract_Renewal_Acme.pdf,/sites/Legal/Contracts/Contract_Renewal_Acme.pdf,Document,2024-05-01,R. Patel

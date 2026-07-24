@@ -1,0 +1,76 @@
+# ---------------------------------------------------------------------------
+# Taxonomy rules — EDIT THIS FILE to refine the classification, no code needed.
+#
+# Three sections:
+#   doc_types        -> how to recognise a document TYPE from name / path
+#   extension_class  -> coarse format class from file extension
+#   folder_mappings  -> map top folder levels to Department / Function
+# ---------------------------------------------------------------------------
+
+# Each doc type lists case-insensitive regex patterns.
+# `name` patterns are matched against the file name (strongest signal),
+# `path` patterns against the full folder path (supporting signal).
+doc_types:
+  invoice:
+    name: ['invoice', '\binv[-_ ]?\d', '\bp\.?o\.?[-_ ]?\d']
+    path: ['invoices?', 'accounts?[ _]payable', '\bap\b']
+  contract:
+    name: ['contract', 'agreement', '\bmsa\b', '\bsow\b', '\bnda\b', 'terms']
+    path: ['contracts?', 'agreements?', 'legal']
+  minutes:
+    name: ['minutes', '\bmom\b', 'meeting[ _]notes']
+    path: ['minutes', 'meetings?', 'board']
+  policy:
+    name: ['policy', 'policies', 'procedure', 'guideline', 'handbook']
+    path: ['policies', 'procedures', 'governance']
+  report:
+    name: ['report', 'analysis', 'review', 'summary', '\bkpi\b', 'dashboard']
+    path: ['reports?', 'reporting', 'analytics']
+  presentation:
+    name: ['presentation', 'deck', 'slides', 'pitch']
+    path: ['presentations?', 'decks?']
+  cv:
+    name: ['\bcv\b', 'resume', 'curriculum[ _]vitae']
+    path: ['recruitment', 'candidates?', 'applicants?']
+  proposal:
+    name: ['proposal', 'quote', 'quotation', 'tender', '\brfp\b', 'estimate']
+    path: ['proposals?', 'bids?', 'tenders?']
+  form:
+    name: ['form', 'template', 'application', 'checklist']
+    path: ['forms?', 'templates?']
+  spreadsheet_data:
+    name: ['budget', 'forecast', 'tracker', 'register', 'log\b']
+    path: ['budgets?', 'finance']
+
+# Coarse format class from extension (fallback / weak signal only).
+extension_class:
+  spreadsheet: ['.xlsx', '.xls', '.xlsm', '.csv']
+  presentation: ['.pptx', '.ppt']
+  document: ['.docx', '.doc', '.rtf', '.txt', '.pdf']
+  image: ['.png', '.jpg', '.jpeg', '.gif', '.tiff']
+  email: ['.msg', '.eml']
+
+# Map a top-level folder (level_0) to a Department, and level_1 to a Function.
+# Matching is case-insensitive and substring-based. Unmatched folders fall
+# back to the raw folder name so nothing is dropped.
+folder_mappings:
+  department:
+    Finance: ['finance', 'accounts', 'accounting', 'treasury']
+    HR: ['hr', 'human resources', 'people', 'recruitment']
+    Legal: ['legal', 'compliance', 'governance']
+    Sales: ['sales', 'commercial', 'business development']
+    Marketing: ['marketing', 'comms', 'communications', 'brand']
+    Operations: ['operations', 'ops', 'delivery', 'projects']
+    IT: ['\bit\b', 'technology', 'infrastructure', 'systems']
+  function:
+    Accounts Payable: ['accounts payable', '\bap\b', 'payables']
+    Accounts Receivable: ['accounts receivable', '\bar\b', 'receivables']
+    Payroll: ['payroll', 'salaries']
+    Recruitment: ['recruitment', 'hiring', 'candidates']
+    Contracts: ['contracts', 'agreements']
+
+# Confidence weights (how much each matching signal contributes, 0-1 blend).
+weights:
+  name_match: 0.6
+  path_match: 0.3
+  extension_only: 0.15
