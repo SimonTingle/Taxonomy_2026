@@ -39,7 +39,7 @@ RUN npm run build
 FROM nginx:alpine AS runtime
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=web /web/dist /usr/share/nginx/html
-EXPOSE 80
+EXPOSE 8070
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
-    CMD wget -qO- http://localhost/health || exit 1
+    CMD wget -qO- http://localhost:8070/health || exit 1
 CMD ["nginx", "-g", "daemon off;"]
