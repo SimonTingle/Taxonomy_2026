@@ -1,0 +1,66 @@
+{
+  "total_files": 103502,
+  "distinct_doc_types": 16,
+  "classified_pct": 52.2,
+  "low_confidence_count": 63520,
+  "doc_type_counts": {
+    "unclassified (document)": 20382,
+    "form": 17462,
+    "report": 13499,
+    "unclassified": 13296,
+    "unclassified (email)": 5960,
+    "minutes": 5280,
+    "contract": 4784,
+    "unclassified (image)": 4570,
+    "invoice": 3876,
+    "spreadsheet_data": 3750,
+    "unclassified (spreadsheet)": 3558,
+    "proposal": 2472,
+    "unclassified (presentation)": 1703,
+    "policy": 1611,
+    "presentation": 1254,
+    "cv": 45
+  },
+  "department_counts": {
+    "pr19": 103502
+  },
+  "function_counts": {
+    "WAR": 102517,
+    "Contracts": 958,
+    "Accounts Payable": 14,
+    "Recruitment": 11,
+    "Accounts Receivable": 2
+  },
+  "path_structures": {
+    "depth_distribution": {
+      "3": 5,
+      "4": 117,
+      "5": 5562,
+      "6": 6380,
+      "7": 10888,
+      "8": 12102,
+      "9": 19615,
+      "10": 18155,
+      "11": 11581,
+      "12": 12147,
+      "13": 5531,
+      "14": 854,
+      "15": 336,
+      "16": 155,
+      "17": 72,
+      "18": 2
+    },
+    "top_folders": [
+      [
+        "pr19",
+        103502
+      ]
+    ],
+    "common_templates": [
+      [
+        "pr19/WAR/Shared Documents",
+        103502
+      ]
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+:root {
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --border: #e2e5ea;
+  --text: #1c2430;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --warn: #b45309;
+  --low-bg: #fff7ed;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+header h1 { margin: 0 0 4px; font-size: 22px; }
+.src { margin: 0 0 20px; color: var(--muted); font-size: 13px; }
+
+.empty {
+  background: var(--panel);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 32px;
+  text-align: center;
+}
+.err { color: #b91c1c; }
+
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.card.warn { border-color: #fcd9a8; background: var(--low-bg); }
+.card-value { font-size: 26px; font-weight: 700; }
+.card-label { color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+.field { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--muted); }
+.field select, .search {
+  font-size: 14px;
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--text);
+}
+.search { flex: 1; min-width: 220px; }
+.check { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.upload { font-size: 12px; color: var(--muted); display: flex; flex-direction: column; gap: 4px; }
+.upload input { font-size: 12px; }
+
+.count { color: var(--muted); font-size: 13px; margin: 6px 2px; }
+
+.path-structures {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+}
+.path-structures h2 { margin: 0 0 4px; font-size: 15px; }
+.path-structures .subtitle { margin: 0 0 14px; font-size: 12px; }
+.ps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.ps-col h3 {
+  margin: 0 0 8px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--muted);
+}
+.ps-bars { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.ps-bars li { display: grid; grid-template-columns: 84px 1fr 44px; align-items: center; gap: 8px; font-size: 12px; }
+.ps-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ps-bar-track { height: 6px; background: #e5e7eb; border-radius: 3px; overflow: hidden; }
+.ps-bar-fill { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+.ps-bar-fill.alt { background: #059669; }
+.ps-bar-fill.alt2 { background: #d97706; }
+.ps-count { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+@media (max-width: 860px) {
+  .ps-grid { grid-template-columns: 1fr; }
+}
+
+.table-wrap {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: auto;
+}
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); }
+th {
+  position: sticky; top: 0;
+  background: #f0f2f5;
+  cursor: pointer;
+  user-select: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--muted);
+}
+th.sorted { color: var(--accent); }
+tbody tr:hover { background: #f9fafb; }
+tr.low { background: var(--low-bg); }
+td:first-child { font-weight: 500; max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.muted { color: var(--muted); }
+.note { padding: 10px 12px; }
+
+.conf { display: flex; align-items: center; gap: 8px; min-width: 110px; }
+.conf-track { flex: 1; height: 7px; background: #e5e7eb; border-radius: 4px; overflow: hidden; }
+.conf-fill { height: 100%; }
+.conf span { font-variant-numeric: tabular-nums; font-size: 12px; color: var(--muted); }
