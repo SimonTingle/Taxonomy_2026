@@ -1,0 +1,54 @@
+# Docker Swarm stack for the taxonomy review UI.
+#
+#   docker build --build-arg INPUT_CSV=Book1.csv -t taxonomy-review:latest .
+#   docker stack deploy -c docker-compose.yml taxonomy
+#
+# (Compose ignores the `deploy:` block for `docker compose up`; it is honoured
+#  by `docker stack deploy` in Swarm mode.)
+
+services:
+  taxonomy-ui:
+    image: ${IMAGE:-taxonomy-review:latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        INPUT_CSV: ${INPUT_CSV:-data/sample_export.csv}
+    ports:
+      - target: 80
+        published: ${PUBLISHED_PORT:-8080}
+        protocol: tcp
+        mode: ingress
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    deploy:
+      replicas: ${REPLICAS:-2}
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+      rollback_config:
+        parallelism: 1
+        order: stop-first
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 256M
+        reservations:
+          cpus: "0.10"
+          memory: 64M
+    networks:
+      - taxonomy-net
+
+networks:
+  taxonomy-net:
+    driver: overlay
+    attachable: true
