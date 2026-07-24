@@ -29,8 +29,9 @@ To ship the real data, either:
 - deploy via `caprover deploy` (tarball includes the working tree, incl. `Book1.csv`), **or**
 - set a build arg in the CapRover app config → *Deployment* → build args: `INPUT_CSV=Book1.csv`.
 
-CapRover maps the container's port 80 to the app automatically and terminates TLS for you.
-The healthcheck hits `/health`.
+CapRover needs the **Container HTTP Port** set to `8070` in the app's *App Configs* tab
+(App Configs → HTTP Settings → Container HTTP Port) to match this image's `EXPOSE 8070`.
+CapRover then terminates TLS for you and proxies to that port. The healthcheck hits `/health`.
 
 ---
 
