@@ -40,6 +40,10 @@ FROM nginx:alpine AS runtime
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=web /web/dist /usr/share/nginx/html
 EXPOSE 8070
-HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
-    CMD wget -qO- http://localhost:8070/health || exit 1
+# No Docker-level HEALTHCHECK here: CapRover does its own HTTP readiness check
+# against the Container HTTP Port, and a HEALTHCHECK directive was observed to
+# fight with CapRover's deploy-wait logic, causing an infinite task restart
+# loop where the service was recreated every few seconds before the first
+# healthcheck attempt could ever complete. /health is still served by nginx
+# below for anyone (Swarm compose, external monitors) that wants to poll it.
 CMD ["nginx", "-g", "daemon off;"]
